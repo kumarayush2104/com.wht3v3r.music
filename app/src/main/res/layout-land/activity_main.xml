@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <ListView
+        android:id="@+id/songList"
+        android:paddingVertical="20dp"
+        android:layout_width="0dp"
+        android:padding="10dp"
+        android:layout_height="match_parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintEnd_toStartOf="@id/musicToolbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/musicToolbox"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/songList"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/songAlbum"
+            android:padding="10dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_width="158dp"
+            android:layout_height="158dp"/>
+        <TextView
+            android:id="@+id/songTitle"
+            android:text="Song Name (Movie name /Album Name)"
+            android:textSize="22sp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:layout_gravity="start"
+            android:paddingVertical="10dp"
+            android:scrollHorizontally="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/songArtist"
+            android:text="Artist"
+            android:layout_gravity="start"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:textSize="14sp"
+            android:paddingBottom="15dp"
+            android:scrollHorizontally="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <SeekBar
+            android:id="@+id/songProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="40"
+            android:layout_gravity="start"
+            android:paddingHorizontal="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:thumb="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@id/musicToolbox" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_weight="1"
+                android:text="00:00" />
+
+            <TextView
+                android:id="@+id/songProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:text="99:99" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:text="Previous"
+                android:paddingHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Play/Pause"
+                android:paddingHorizontal="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Next"
+                android:paddingHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
